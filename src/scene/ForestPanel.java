@@ -49,7 +49,11 @@ public class ForestPanel extends Scene {
         } catch (Exception e) {/*How to handle?*/
         }
         
+        
         this.initControlButtons(); //Change to init
+        
+
+
         
     }
     
@@ -86,9 +90,16 @@ public class ForestPanel extends Scene {
     
     
     private void doorButtonActionPerformed(java.awt.event.ActionEvent evt) {                                        
-              System.out.println("Travelling to the ominous Door");
+              
               sceneframe.displayScene(1);
+              
     } 
+
+    
+
+    
+
+        
     
     private void cityButtonActionPerformed(java.awt.event.ActionEvent evt) {                                        
               System.out.println("Travelling to the ominous Door");

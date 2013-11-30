@@ -1,5 +1,5 @@
 package scene;
-
+import main.SceneFrame;
 import Animations.BoxShape;
 import Animations.MoveableShape;
 import Animations.ShapeIcon;
@@ -24,51 +24,51 @@ import javax.swing.Timer;
  *
  * @author Group 7
  */
-public class DoorPane extends Scene {
+public class DungeonHall extends Scene {
     Timer t;
 /**
  * Creates a new ForestScene Object
  */
-    public DoorPane(SceneFrame frame) {
-        super("FirstPanel", frame);
-        sceneframe.setTextArea("First Time Viewing This\n Scene");
+    public DungeonHall (SceneFrame frame) {
+        super("ThirdPanel", frame);
         
         try {
             //BufferedImage origImage = ImageIO.read(getClass().getResource("/resources/ForestPath.jpg"));
            //int type = origImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : origImage.getType();
             //image = super.resizeImage(origImage, type);
             //ImageIO.write(resizedimage, "jpg", new File("/resources/ForestPath2.jpg"));
-            image = (new ImageIcon(getClass().getResource("/resources/Door&Vase.JPG"))).getImage();
+            image = (new ImageIcon(getClass().getResource("/resources/DungeonHallPic.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         
         this.initControlButtons(); //Change to init
-        
-
     }
     
     @Override
     public void initControlButtons(){
-       this.setLayout(null);       
-        JButton forestButton = new JButton(""); 
-        forestButton.setBounds(110, 90, 150, 200);
-        forestButton.addActionListener(new java.awt.event.ActionListener() {
+       this.setLayout(null);
+              
+       JButton doorButton = new JButton("");
+       doorButton.setBounds(240, 95, 105, 105);
+       doorButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                forestButtonActionPerformed(evt);
+                doorButtonActionPerformed(evt);
             }
         });
-       forestButton.setOpaque(false);
-       forestButton.setContentAreaFilled(false);
-       forestButton.setBorderPainted(false);
-       forestButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-       this.add(forestButton);  
+       doorButton.setOpaque(false);
+       doorButton.setContentAreaFilled(false);
+       doorButton.setBorderPainted(false);
+       doorButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+       this.add(doorButton);
+
     }
+        private void doorButtonActionPerformed(java.awt.event.ActionEvent evt) {                                        
+             sceneframe.setTextArea("Test Message");
+              sceneframe.displayScene(2);
+    } 
     
     
-    private void forestButtonActionPerformed(java.awt.event.ActionEvent evt) {                                        
-              sceneframe.setTextArea("Test Message #2");
-              sceneframe.displayScene(0);
-    }
+
     
     
     

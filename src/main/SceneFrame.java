@@ -5,6 +5,7 @@
 package main;
 import scene.Scene;
 import javax.swing.JButton;
+import main.EngineGame;
 
 public class SceneFrame extends javax.swing.JFrame {  
     
@@ -149,15 +150,23 @@ public class SceneFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jTextArea1.setText("This is a text fieldmhghfdhdjytdj\nytkutrfkuyfkuyfkuyfukyfkuyfkuyfku");        // TODO add your handling code here:
+
+            // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    public void setTextArea(String TA){
+        jTextArea1.setText(TA);
+    }
+    public void jButton3NewActionEvent(java.awt.event.ActionEvent evt){
+        
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel SceneManager;
     private javax.swing.JPanel SceneManager1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    public javax.swing.JButton jButton2;
+    public javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

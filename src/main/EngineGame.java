@@ -34,25 +34,23 @@ public class EngineGame {
         sceneframe.dispose();
         //sceneframe.setType(Window.Type.NORMAL);
         //sceneframe.setSize(WIDTH, HEIGHT);        
-        sceneframe.setVisible(true);        
+        sceneframe.setVisible(true);   
+        sceneframe.jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+              
+                if (sceneframe.currentIdx==1){
+                    sceneframe.setTextArea("This is working");
+                }
+                else if (sceneframe.currentIdx==0){
+                    sceneframe.setTextArea("This is working better");
+                }
+
+                    
+                
+            }
+        });
 }
        
-
-  public void displayScene(String nextScene) {
-       
-        switch(nextScene)
-        {
-            case "DoorScene":
-                currentScene.setVisible(false);
-                currentScene = DoorScene;
-                currentScene.setVisible(true);
-                break; 
-            case "ForestScene":
-                currentScene.setVisible(false);
-                currentScene = Forest;
-                currentScene.setVisible(true);
-        }        
-    }
 
    public void addSceneCards() {       
        currentScene = new ForestPanel(sceneframe);
