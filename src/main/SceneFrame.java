@@ -61,6 +61,7 @@ public class SceneFrame extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Adventure Game");
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(255, 0, 255));
         setForeground(new java.awt.Color(255, 51, 51));
@@ -144,7 +145,7 @@ public class SceneFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-                jTextPane1.setText("asdfsadfsakkkhk\njhgkjhgkjhgkj");
+    
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
