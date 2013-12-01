@@ -13,26 +13,23 @@ import scene.Scene;
  *
  * @author Group 7
  */
-public class LockedDoor12 extends Scene {
+public class  Fork13Second_13 extends Scene {
 
     Boolean eventOn;
 
 /**
  * Creates a new Fork23 Object
  */
-    public LockedDoor12(SceneFrame frame) {
-        super("FirstPanel", frame);
-        sceneframe.setTextArea("First Time Viewing This\n Scene");
-        
-        try {            
-            image = (new ImageIcon(getClass().getResource("/resources/LockedDoor_12.JPG"))).getImage();
+    public Fork13Second_13(SceneFrame frame) {
+        super("Fork13_Second", frame);        
+                eventOn = false; 
+                          
+        try {
+            image = (new ImageIcon(getClass().getResource("/resources/Fork13_Second.jpg"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         
-        this.initControlButtons(); //Change to init        
-
     }
-    
     @Override
     public void initControlButtons() {
         
@@ -40,7 +37,7 @@ public class LockedDoor12 extends Scene {
     @Override
     public void displayEvents() {
     }
-    @Override
+    
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
@@ -49,6 +46,5 @@ public class LockedDoor12 extends Scene {
         } else {
             System.out.println("Image not found");
         }        
-    } 
-    
+    }  
 }

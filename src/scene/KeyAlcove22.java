@@ -48,7 +48,7 @@ public class KeyAlcove22 extends Scene {
 
        
        keyButton = new JButton("");
-       keyButton.setBounds(100, 210, 80, 50);
+       keyButton.setBounds(160, 155, 80, 50);
        keyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/key.png")));
        keyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,5 +76,17 @@ public class KeyAlcove22 extends Scene {
     public void displayEvents() {
     }
     
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        //Graphics2D g2 = (Graphics2D) g;
+        if (image != null) {
+            boolean val = g.drawImage(image, 0, 0, 400, 300, this);
+        } else {
+            System.out.println("Image not found");
+        }        
+    }
+    
     private javax.swing.JButton keyButton;
+    
+    
 }

@@ -49,7 +49,7 @@ public class DoorPane extends Scene {
     
     @Override
     public void initControlButtons(){
-       this.setLayout(null);       
+       //this.setLayout(null);       
         JButton forestButton = new JButton(""); 
         forestButton.setBounds(110, 90, 150, 200);
         forestButton.addActionListener(new java.awt.event.ActionListener() {

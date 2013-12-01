@@ -33,23 +33,15 @@ public class LongHall_32 extends Scene{
        public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
-            if (image != null && image2 != null) {
-               
+            if (image != null && image2 != null) {               
 
-                if(!isOpen )
-                {
                     boolean val = g.drawImage(image, 0, 0, 400, 300, this);
-                }
-                else if(isOpen)
-                {
-                    boolean val = g.drawImage(image2, 0, 0, 400, 300, this);
-                }
+            }
                 else {
                     System.out.println("Image not found");
                 }
             }
-               
-    }         
+                        
     
     @Override
     public void displayEvents(){

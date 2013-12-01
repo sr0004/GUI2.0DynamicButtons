@@ -3,6 +3,7 @@ package scene;
 
 import main.SceneFrame;
 import java.awt.Cursor;
+import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 import main.SceneFrame;
@@ -24,9 +25,11 @@ public class Fork13 extends Scene {
                 eventOn = false; 
                           
         try {
-            image = (new ImageIcon(getClass().getResource("/resources/Fork_13.jpg"))).getImage();
+            image = (new ImageIcon(getClass().getResource("/resources/Fork_Pic13.jpg"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
+        
+        this.initControlButtons();
         
     }
     @Override
@@ -36,5 +39,13 @@ public class Fork13 extends Scene {
     @Override
     public void displayEvents() {
     }
-    
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        //Graphics2D g2 = (Graphics2D) g;
+        if (image != null) {
+            boolean val = g.drawImage(image, 0, 0, 400, 300, this);
+        } else {
+            System.out.println("Image not found");
+        }        
+    }  
 }

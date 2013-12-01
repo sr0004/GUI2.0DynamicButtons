@@ -34,10 +34,7 @@ public class EndSnail_Pic extends Scene {
         sceneframe.setTextArea("First Time Viewing This\n Scene");
         
         try {
-            //BufferedImage origImage = ImageIO.read(getClass().getResource("/resources/ForestPath.jpg"));
-           //int type = origImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : origImage.getType();
-            //image = super.resizeImage(origImage, type);
-            //ImageIO.write(resizedimage, "jpg", new File("/resources/ForestPath2.jpg"));
+
             image = (new ImageIcon(getClass().getResource("/resources/Door&Vase.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }

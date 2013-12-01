@@ -6,31 +6,63 @@ package main;
 import scene.Scene;
 import javax.swing.JButton;
 import main.EngineGame;
+import scene.SceneTable;
+import java.util.ArrayList;
 
 public class SceneFrame extends javax.swing.JFrame {  
     
+    private ArrayList<Scene> sceneList; 
     int currentIdx;
+    int nextIdx;
+    private SceneTable scenetable;
     Scene currentScene;
+    
     /**
      * Creates new form SceneFrame
      */
-    public SceneFrame() {        
+    public SceneFrame() {  
+        sceneList = new ArrayList<Scene>();
         initComponents(); 
+        nextIdx= -1;
+        scenetable = new SceneTable();
+        scenetable.initTable();
         currentIdx = 0;
     }
     
+    
+    
+    
     public void addScene(Scene aScene, int idx){
-        //aScene.paintComponents(null);
-        SceneManager.add(aScene, idx);
-        //SceneManager.getComponent(idx).setVisible(false);        
+        
+        sceneList.add(idx, aScene);
+        
+        if(idx == 0)
+        {
+            SceneManager.add(aScene, idx); 
+        }
     }
     
+    
+    
     public void displayScene(int idx){
-        currentScene = (Scene)SceneManager.getComponent(idx);
-        SceneManager.getComponent(currentIdx).setVisible(false);
-        currentScene.displayEvents();
-        SceneManager.getComponent(idx).setVisible(true);
-        currentIdx = idx;
+        
+        if (idx != -1)
+        {
+            currentScene = sceneList.get(idx);
+            
+            SceneManager.getComponent(0).setVisible(false);
+            SceneManager.remove(0);
+            //currentScene = (Scene)SceneManager.getComponent(idx);            
+            
+            SceneManager.add(currentScene);
+            SceneManager.getComponent(0).setVisible(true);
+            
+            //SceneManager.getComponent(currentIdx).setVisible(false);
+            
+            currentScene.displayEvents();
+      
+            currentIdx = idx;
+        }
     }
     //public void displayScene(Scene)
 
@@ -49,6 +81,11 @@ public class SceneFrame extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        ForwardButton = new javax.swing.JButton();
+        LeftButton = new javax.swing.JButton();
+        RightButton = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout SceneManager1Layout = new javax.swing.GroupLayout(SceneManager1);
         SceneManager1.setLayout(SceneManager1Layout);
@@ -82,8 +119,9 @@ public class SceneFrame extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(51, 51, 51));
         jButton2.setForeground(new java.awt.Color(102, 102, 102));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/sword.gif"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/torch2.png"))); // NOI18N
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton2.setEnabled(false);
         jButton2.setFocusable(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +133,7 @@ public class SceneFrame extends javax.swing.JFrame {
         jButton3.setForeground(new java.awt.Color(102, 102, 102));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/key.png"))); // NOI18N
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton3.setEnabled(false);
         jButton3.setFocusable(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,38 +147,99 @@ public class SceneFrame extends javax.swing.JFrame {
         jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(jTextArea1);
 
+        ForwardButton.setText("Forward");
+        ForwardButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ForwardButtonActionPerformed(evt);
+            }
+        });
+
+        LeftButton.setText("Left");
+        LeftButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeftButtonActionPerformed(evt);
+            }
+        });
+
+        RightButton.setText("Right");
+        RightButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RightButtonActionPerformed(evt);
+            }
+        });
+
+        BackButton.setText("Back");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButtonActionPerformed(evt);
+            }
+        });
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Steel_sword_icon.png"))); // NOI18N
+        jButton1.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(SceneManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(BackButton)
+                            .addGap(80, 80, 80)))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(LeftButton)
+                        .addGap(39, 39, 39)
+                        .addComponent(RightButton)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(ForwardButton)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SceneManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(SceneManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(ForwardButton)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LeftButton)
+                            .addComponent(RightButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BackButton)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -154,17 +254,39 @@ public class SceneFrame extends javax.swing.JFrame {
             // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void ForwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardButtonActionPerformed
+        nextIdx = scenetable.changeScene(currentIdx, 0);
+        this.displayScene(nextIdx);
+    }//GEN-LAST:event_ForwardButtonActionPerformed
+
+    private void LeftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeftButtonActionPerformed
+        nextIdx = scenetable.changeScene(currentIdx, 3);
+        this.displayScene(nextIdx);
+    }//GEN-LAST:event_LeftButtonActionPerformed
+
+    private void RightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RightButtonActionPerformed
+        nextIdx = scenetable.changeScene(currentIdx, 2);
+        this.displayScene(nextIdx);
+    }//GEN-LAST:event_RightButtonActionPerformed
+
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+        nextIdx = scenetable.changeScene(currentIdx, 1);
+        this.displayScene(nextIdx);
+    }//GEN-LAST:event_BackButtonActionPerformed
+
     public void setTextArea(String TA){
         jTextArea1.setText(TA);
-    }
-    public void jButton3NewActionEvent(java.awt.event.ActionEvent evt){
-        
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton;
+    private javax.swing.JButton ForwardButton;
+    private javax.swing.JButton LeftButton;
+    private javax.swing.JButton RightButton;
     private javax.swing.JPanel SceneManager;
     private javax.swing.JPanel SceneManager1;
+    private javax.swing.JButton jButton1;
     public javax.swing.JButton jButton2;
     public javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;

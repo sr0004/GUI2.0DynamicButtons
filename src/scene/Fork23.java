@@ -3,6 +3,7 @@ package scene;
 
 import main.SceneFrame;
 import java.awt.Cursor;
+import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 import main.SceneFrame;
@@ -36,5 +37,15 @@ public class Fork23 extends Scene {
     @Override
     public void displayEvents() {
     }
+    
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        //Graphics2D g2 = (Graphics2D) g;
+        if (image != null) {
+            boolean val = g.drawImage(image, 0, 0, 400, 300, this);
+        } else {
+            System.out.println("Image not found");
+        }        
+    }  
     
 }

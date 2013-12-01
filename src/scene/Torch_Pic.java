@@ -30,7 +30,7 @@ public class Torch_Pic extends Scene {
  * Creates a new ForestScene Object
  */
     public Torch_Pic(SceneFrame frame) {
-        super("FirstPanel", frame);
+        super("TorchPic", frame);
         sceneframe.setTextArea("First Time Viewing This\n Scene");
         
         try {

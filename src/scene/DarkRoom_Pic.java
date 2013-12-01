@@ -38,7 +38,7 @@ public class DarkRoom_Pic extends Scene {
            //int type = origImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : origImage.getType();
             //image = super.resizeImage(origImage, type);
             //ImageIO.write(resizedimage, "jpg", new File("/resources/ForestPath2.jpg"));
-            image = (new ImageIcon(getClass().getResource("/resources/Door&Vase.JPG"))).getImage();
+            image = (new ImageIcon(getClass().getResource("/resources/ForestPath.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         

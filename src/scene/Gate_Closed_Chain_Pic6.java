@@ -38,7 +38,7 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
            //int type = origImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : origImage.getType();
             //image = super.resizeImage(origImage, type);
             //ImageIO.write(resizedimage, "jpg", new File("/resources/ForestPath2.jpg"));
-//            image = (new ImageIcon(getClass().getResource("/resources/Gate_Closed_Chain_Pic6.JPG"))).getImage();
+            image = (new ImageIcon(getClass().getResource("/resources/Gate_Closed_Chain_Pic6.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         
