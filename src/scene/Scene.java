@@ -12,6 +12,8 @@ import java.awt.Graphics2D;
 public abstract class Scene extends JPanel {
 
     public Image image;
+    public boolean isOpen;
+    public Image image2;
     //public BufferedImage yeah;
     private String sceneName;
     public SceneFrame sceneframe;
