@@ -48,7 +48,7 @@ public abstract class Scene extends JPanel {
     }
 
   public abstract void initControlButtons();
-  public abstract void displayEvents();
+  public abstract void displayEvents(int[] buttonArray);
   
  // public abstract void implementControlButtons();
 }

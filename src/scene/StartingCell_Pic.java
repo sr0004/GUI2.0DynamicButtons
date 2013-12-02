@@ -64,7 +64,8 @@ public class StartingCell_Pic extends Scene {
     }         
     
     @Override
-    public void displayEvents(){
+    public void displayEvents(int[] buttonArray){
+        
         
     }
         

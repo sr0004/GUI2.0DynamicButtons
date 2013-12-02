@@ -22,6 +22,10 @@ public final class SceneTable {
         
     }
     
+    public int[] getButtonVisibility(int row) {
+        return scenetable[row];   
+    }
+    
     public int changeScene(int x, int y){
         int c = scenetable[x][y]; 
         return c;        

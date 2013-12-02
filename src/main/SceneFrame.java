@@ -11,7 +11,8 @@ import java.util.ArrayList;
 
 public class SceneFrame extends javax.swing.JFrame {  
     
-    private ArrayList<Scene> sceneList; 
+    private ArrayList<Scene> sceneList;
+    private int[] buttonVis;
     int currentIdx;
     int nextIdx;
     private SceneTable scenetable;
@@ -22,15 +23,13 @@ public class SceneFrame extends javax.swing.JFrame {
      */
     public SceneFrame() {  
         sceneList = new ArrayList<Scene>();
+        buttonVis = null;
         initComponents(); 
         nextIdx= -1;
         scenetable = new SceneTable();
         scenetable.initTable();
         currentIdx = 0;
-    }
-    
-    
-    
+    }   
     
     public void addScene(Scene aScene, int idx){
         
@@ -49,7 +48,8 @@ public class SceneFrame extends javax.swing.JFrame {
         if (idx != -1)
         {
             currentScene = sceneList.get(idx);
-            
+            buttonVis = scenetable.getButtonVisibility(idx);
+            currentScene.displayEvents();
             SceneManager.getComponent(0).setVisible(false);
             SceneManager.remove(0);
             //currentScene = (Scene)SceneManager.getComponent(idx);            
