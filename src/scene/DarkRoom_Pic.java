@@ -30,15 +30,13 @@ public class DarkRoom_Pic extends Scene {
  * Creates a new ForestScene Object
  */
     public DarkRoom_Pic(SceneFrame frame) {
-        super("FirstPanel", frame);
+        super("DarkRoom", frame);
         sceneframe.setTextArea("First Time Viewing This\n Scene");
         
         try {
-            //BufferedImage origImage = ImageIO.read(getClass().getResource("/resources/ForestPath.jpg"));
-           //int type = origImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : origImage.getType();
-            //image = super.resizeImage(origImage, type);
-            //ImageIO.write(resizedimage, "jpg", new File("/resources/ForestPath2.jpg"));
-            image = (new ImageIcon(getClass().getResource("/resources/ForestPath.JPG"))).getImage();
+
+            image = (new ImageIcon(getClass().getResource("/resources/DarkRoom.JPG"))).getImage();
+            //image2 = (new ImageIcon(getClass().getResource("/resources/LitRoom.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         

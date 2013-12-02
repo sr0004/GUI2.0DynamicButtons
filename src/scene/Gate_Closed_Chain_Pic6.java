@@ -34,11 +34,9 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
         sceneframe.setTextArea("First Time Viewing This\n Scene");
         
         try {
-            //BufferedImage origImage = ImageIO.read(getClass().getResource("/resources/ForestPath.jpg"));
-           //int type = origImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : origImage.getType();
-            //image = super.resizeImage(origImage, type);
-            //ImageIO.write(resizedimage, "jpg", new File("/resources/ForestPath2.jpg"));
+
             image = (new ImageIcon(getClass().getResource("/resources/Gate_Closed_Chain_Pic6.JPG"))).getImage();
+            //image2 = (new ImageIcon(getClass().getResource("/resources/Gate_Open_Chain_Pic6.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         

@@ -35,7 +35,8 @@ public class EndSnail_Pic extends Scene {
         
         try {
 
-            image = (new ImageIcon(getClass().getResource("/resources/Door&Vase.JPG"))).getImage();
+            image = (new ImageIcon(getClass().getResource("/resources/SnailAlive.JPG"))).getImage();
+            //image2 = (new ImageIcon(getClass().getResource("/resources/SnailDead.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         

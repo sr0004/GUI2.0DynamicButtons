@@ -34,7 +34,7 @@ public class StartingCell_Pic extends Scene {
         sceneframe.setTextArea("First Time Viewing This\n Scene");
         
         try {            
-            image = (new ImageIcon(getClass().getResource("/resources/LongHall_32.JPG"))).getImage();
+            image = (new ImageIcon(getClass().getResource("/resources/JailCell.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         

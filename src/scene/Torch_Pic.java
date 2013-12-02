@@ -27,18 +27,15 @@ import javax.swing.Timer;
 public class Torch_Pic extends Scene {
     
 /**
- * Creates a new ForestScene Object
+ * Creates a new TorchPic Object
  */
     public Torch_Pic(SceneFrame frame) {
         super("TorchPic", frame);
         sceneframe.setTextArea("First Time Viewing This\n Scene");
         
         try {
-            //BufferedImage origImage = ImageIO.read(getClass().getResource("/resources/ForestPath.jpg"));
-           //int type = origImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : origImage.getType();
-            //image = super.resizeImage(origImage, type);
-            //ImageIO.write(resizedimage, "jpg", new File("/resources/ForestPath2.jpg"));
-            image = (new ImageIcon(getClass().getResource("/resources/Door&Vase.JPG"))).getImage();
+
+            image = (new ImageIcon(getClass().getResource("/resources/TorchPic.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         
