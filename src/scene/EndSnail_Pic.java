@@ -49,7 +49,8 @@ public class EndSnail_Pic extends Scene {
 
             
             
-        } catch (Exception e) {/*How to handle?*/
+        } catch (Exception e) {
+            System.out.println("There is no image by that name");
         }
         
         this.initControlButtons(); //Change to init

@@ -39,7 +39,8 @@ public class DarkRoom_Pic extends Scene {
 
             image = (new ImageIcon(getClass().getResource("/resources/DarkRoom.JPG"))).getImage();
             image2 = (new ImageIcon(getClass().getResource("/resources/LitRoom.JPG"))).getImage();
-        } catch (Exception e) {/*How to handle?*/
+        } catch (Exception e) {
+            System.out.println("There is no image by that name");
         }
         
         this.initControlButtons(); //Change to init

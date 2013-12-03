@@ -37,7 +37,8 @@ public class RightTurn_Pic3 extends Scene {
         try {
 
             image = (new ImageIcon(getClass().getResource("/resources/RightTurn_Pic3.JPG"))).getImage();
-        } catch (Exception e) {/*How to handle?*/
+        } catch (Exception e) {
+            System.out.println("There is no image by that name");
         }
         
         this.initControlButtons(); //Change to init

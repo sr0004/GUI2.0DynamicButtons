@@ -29,7 +29,8 @@ public class LockedDoor12 extends Scene {
         try {            
             image = (new ImageIcon(getClass().getResource("/resources/LockedDoor_12.JPG"))).getImage();
             image2 = (new ImageIcon(getClass().getResource("/resources/OpenDoor_12.JPG"))).getImage();
-        } catch (Exception e) {/*How to handle?*/
+        } catch (Exception e) {
+            System.out.println("There is no image by that name");
         }
         
         this.initControlButtons(); //Change to init        

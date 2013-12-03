@@ -26,7 +26,8 @@ public class You_Win extends Scene {
                           
         try {
             image = (new ImageIcon(getClass().getResource("/resources/YouAWinner.jpg"))).getImage();
-        } catch (Exception e) {/*How to handle?*/
+        } catch (Exception e) {
+            System.out.println("There is no image by that name");
         }
         
     }

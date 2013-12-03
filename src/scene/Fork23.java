@@ -26,7 +26,8 @@ public class Fork23 extends Scene {
                           
         try {
             image = (new ImageIcon(getClass().getResource("/resources/Fork_23.jpg"))).getImage();
-        } catch (Exception e) {/*How to handle?*/
+        } catch (Exception e) {
+            System.out.println("There is no image by that name");
         }
         
     }

@@ -25,8 +25,10 @@ public class  Alcove_27 extends Scene {
                 eventOn = false; 
                           
         try {
-            image = (new ImageIcon(getClass().getResource("/resources/Alcove_27.jpg"))).getImage();
-        } catch (Exception e) {/*How to handle?*/
+            image =(new ImageIcon(getClass().getResource("/resources/Alcove_27.jpg"))).getImage();
+        } catch (Exception e) {
+         
+                System.out.println("There is no image by that name");
         }
         
     }

@@ -39,7 +39,8 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
 
             image = (new ImageIcon(getClass().getResource("/resources/Gate_Closed_Chain_Pic6.JPG"))).getImage();
             image2 = (new ImageIcon(getClass().getResource("/resources/Gate_Open_Chain_Pic6.JPG"))).getImage();
-        } catch (Exception e) {/*How to handle?*/
+        } catch (Exception e) {
+            System.out.println("There is no image by that name");
         }
         
         this.initControlButtons(); //Change to init
