@@ -108,7 +108,10 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
     
     @Override
     public void updateDirectionButtons(){
+        if(isClosed==true)
         sceneframe.updateDirections(false, true, false, false);
+        else
+            sceneframe.updateDirections(true, true, false, false);
 
     }
         
