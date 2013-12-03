@@ -24,21 +24,18 @@ import javax.swing.Timer;
  *
  * @author Group 7
  */
-public class DoorPane extends Scene {
-    Timer t;
+public class Torch_Pic extends Scene {
+    
 /**
- * Creates a new ForestScene Object
+ * Creates a new Torch_Pic Object
  */
-    public DoorPane(SceneFrame frame) {
-        super("FirstPanel", frame);
+    public Torch_Pic(SceneFrame frame) {
+        super("TorchPic", frame);
         sceneframe.setTextArea("First Time Viewing This\n Scene");
         
         try {
-            //BufferedImage origImage = ImageIO.read(getClass().getResource("/resources/ForestPath.jpg"));
-           //int type = origImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : origImage.getType();
-            //image = super.resizeImage(origImage, type);
-            //ImageIO.write(resizedimage, "jpg", new File("/resources/ForestPath2.jpg"));
-            image = (new ImageIcon(getClass().getResource("/resources/Door&Vase.JPG"))).getImage();
+
+            image = (new ImageIcon(getClass().getResource("/resources/TorchPic.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         
@@ -49,26 +46,10 @@ public class DoorPane extends Scene {
     
     @Override
     public void initControlButtons(){
-       //this.setLayout(null);       
-        JButton forestButton = new JButton(""); 
-        forestButton.setBounds(110, 90, 150, 200);
-        forestButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                forestButtonActionPerformed(evt);
-            }
-        });
-       forestButton.setOpaque(false);
-       forestButton.setContentAreaFilled(false);
-       forestButton.setBorderPainted(false);
-       forestButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-       this.add(forestButton);  
+  
     }
     
-    
-    private void forestButtonActionPerformed(java.awt.event.ActionEvent evt) {                                        
-              sceneframe.setTextArea("Test Message #2");
-              sceneframe.displayScene(0);
-    }
+   
     
     
     

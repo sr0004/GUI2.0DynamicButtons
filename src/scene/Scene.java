@@ -8,10 +8,18 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.awt.Graphics2D;
 
+/**
+ * Abstract class describing the scene object
+ * @author sra0004
+ */
 
 public abstract class Scene extends JPanel {
 
     public Image image;
+    public boolean isOpen=true;
+    public Image image2;
+    
+   
     //public BufferedImage yeah;
     private String sceneName;
     public SceneFrame sceneframe;
@@ -28,7 +36,7 @@ public abstract class Scene extends JPanel {
         sceneframe = frame;
     }
     
-      public static BufferedImage resizeImage(BufferedImage originalImage, int type){
+    public static BufferedImage resizeImage(BufferedImage originalImage, int type){
 	BufferedImage resizedImage = new BufferedImage(IMG_WIDTH, IMG_HEIGHT, type);
 	Graphics2D g = resizedImage.createGraphics();
 	g.drawImage(originalImage, 0, 0, IMG_WIDTH, IMG_HEIGHT, null);
@@ -44,9 +52,13 @@ public abstract class Scene extends JPanel {
     public String getCardName() {
         return sceneName;
     }
+    
+    public void setImage(){
+    }
+        
 
-  public abstract void initControlButtons();
-  public abstract void displayEvents();
+ public abstract void initControlButtons();
+ public abstract void displayEvents();
   
  // public abstract void implementControlButtons();
 }

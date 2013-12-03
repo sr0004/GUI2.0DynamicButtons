@@ -14,48 +14,10 @@ import java.awt.LayoutManager;
 import java.awt.Rectangle;
 import javax.swing.JPanel;
 
-
-/**
- * CardPanel is provided by Java Sun. The code has not be altered and is used as
- * provided.
- *
- * @author From Java Sun
- *
- * A simpler alternative to a JPanel with a CardLayout. The AWT CardLayout
- * layout manager can be inconvenient to use because the special "stack of
- * cards" operations it supports require a cast to use. For example to show the
- * card named "myCard" given a JPanel with a CardLayout one would write:  <pre>
- * ((CardLayout)(myJPanel.getLayout())).show(myJPanel, "myCard");
- * </pre> This doesn't work well with Swing - all of the CardLayout display
- * operations, like <code>show</code> call validate directly. Swing supports
- * automatic validation (see JComponent.revalidate()); this direct call to
- * validate is inefficient. <p> The CardPane JPanel subclass is intended to
- * support a layout with a modest number of cards, on the order of 100 or less.
- * A cards name is it's component name, as in java.awt.Component.getName(),
- * which is set when the component is added to the CardPanel:  <pre>
- * myCardPanel.add(myChild, "MyChildName");
- * myChild.getName() <i>=> "MyChildName"</i>
- * </pre> As with CardLayout, the first child added to a CardPanel is made
- * visible and there's only one child visible at a time. *
- * The <code>showCard</code> method accepts either a childs name or the child
- * itself:  <pre>
- * myCardPanel.show("MyChildName");
- * myCardPanel.show(myChild);
- * </pre> <p> The CardPanel class doesn't support the vgap/hgap CardLayout
- * properties since one can add a Border, see JComponent.setBorder().
- *
- * Modified by dmr October 2013
- */
 public class ScenePanel extends JPanel {
 
     private static class Layout implements LayoutManager {
 
-        /**
-         * Set the childs name (if non-null) and and make it visible iff it's
-         * the only CardPanel child.
-         *
-         * @see java.awt.Component#setName
-         */
         public void addLayoutComponent(String name, Component child) {
             if (name != null) {
                 child.setName(name);
