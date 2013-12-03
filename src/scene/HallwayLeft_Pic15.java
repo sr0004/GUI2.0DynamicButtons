@@ -31,7 +31,7 @@ public class HallwayLeft_Pic15 extends Scene {
  */
     public HallwayLeft_Pic15(SceneFrame frame) {
         super("FirstPanel", frame);
-        sceneframe.setTextArea("First Time Viewing This\n Scene");
+        
         
         try {
 

@@ -31,7 +31,8 @@ public class StartingCell_Pic extends Scene {
  */
     public StartingCell_Pic(SceneFrame frame) {
         super("FirstPanel", frame);
-        sceneframe.setTextArea("First Time Viewing This\n Scene");
+        sceneframe.updateSceneText("This is the first scene");
+
         
         try {            
             image = (new ImageIcon(getClass().getResource("/resources/JailCell.JPG"))).getImage();
@@ -41,6 +42,7 @@ public class StartingCell_Pic extends Scene {
         this.initControlButtons(); //Change to init
         
         sceneframe.updateDirections(true, false, false, false);
+        
         
 
     }
@@ -72,9 +74,18 @@ public class StartingCell_Pic extends Scene {
     }
     
     @Override
+    public void updateSceneText(){
+        sceneframe.updateSceneText("This is the first scene");
+    }
+    
+    @Override
     public void updateDirectionButtons(){
         sceneframe.updateDirections(true, false, false, false);
     }
+    
+    
+        
+    
         
    private static final int ICON_WIDTH = 400;
    private static final int ICON_HEIGHT = 100;

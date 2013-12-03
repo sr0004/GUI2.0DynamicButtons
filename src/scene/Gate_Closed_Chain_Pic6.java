@@ -114,6 +114,7 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
             sceneframe.updateDirections(true, true, false, false);
 
     }
+
         
     private static final int ICON_WIDTH = 400;
    private static final int ICON_HEIGHT = 100;

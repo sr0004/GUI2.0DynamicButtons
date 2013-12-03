@@ -9,6 +9,7 @@ import main.EngineGame;
 import scene.SceneTable;
 import java.util.ArrayList;
 
+
 public class SceneFrame extends javax.swing.JFrame {  
     
     private ArrayList<Scene> sceneList;
@@ -77,15 +78,15 @@ public class SceneFrame extends javax.swing.JFrame {
 
         SceneManager1 = new scene.ScenePanel();
         SceneManager = new scene.ScenePanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        frameTorchButton = new javax.swing.JButton();
+        frameKeyButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         ForwardButton = new javax.swing.JButton();
         LeftButton = new javax.swing.JButton();
         RightButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        frameSwordButton = new javax.swing.JButton();
 
         javax.swing.GroupLayout SceneManager1Layout = new javax.swing.GroupLayout(SceneManager1);
         SceneManager1.setLayout(SceneManager1Layout);
@@ -117,27 +118,27 @@ public class SceneFrame extends javax.swing.JFrame {
             .addGap(0, 298, Short.MAX_VALUE)
         );
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 51));
-        jButton2.setForeground(new java.awt.Color(102, 102, 102));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/torch2.png"))); // NOI18N
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton2.setEnabled(false);
-        jButton2.setFocusable(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        frameTorchButton.setBackground(new java.awt.Color(51, 51, 51));
+        frameTorchButton.setForeground(new java.awt.Color(102, 102, 102));
+        frameTorchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/torch2.png"))); // NOI18N
+        frameTorchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        frameTorchButton.setEnabled(false);
+        frameTorchButton.setFocusable(false);
+        frameTorchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                frameTorchButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(51, 51, 51));
-        jButton3.setForeground(new java.awt.Color(102, 102, 102));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/key.png"))); // NOI18N
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton3.setEnabled(false);
-        jButton3.setFocusable(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        frameKeyButton.setBackground(new java.awt.Color(51, 51, 51));
+        frameKeyButton.setForeground(new java.awt.Color(102, 102, 102));
+        frameKeyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/key.png"))); // NOI18N
+        frameKeyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        frameKeyButton.setEnabled(false);
+        frameKeyButton.setFocusable(false);
+        frameKeyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                frameKeyButtonActionPerformed(evt);
             }
         });
 
@@ -155,6 +156,7 @@ public class SceneFrame extends javax.swing.JFrame {
         });
 
         LeftButton.setText("Left");
+        LeftButton.setPreferredSize(new java.awt.Dimension(73, 23));
         LeftButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LeftButtonActionPerformed(evt);
@@ -162,6 +164,8 @@ public class SceneFrame extends javax.swing.JFrame {
         });
 
         RightButton.setText("Right");
+        RightButton.setMaximumSize(new java.awt.Dimension(73, 23));
+        RightButton.setPreferredSize(new java.awt.Dimension(73, 23));
         RightButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RightButtonActionPerformed(evt);
@@ -169,17 +173,18 @@ public class SceneFrame extends javax.swing.JFrame {
         });
 
         BackButton.setText("Back");
+        BackButton.setPreferredSize(new java.awt.Dimension(73, 23));
         BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackButtonActionPerformed(evt);
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Steel_sword_icon.png"))); // NOI18N
-        jButton1.setEnabled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        frameSwordButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Steel_sword_icon.png"))); // NOI18N
+        frameSwordButton.setEnabled(false);
+        frameSwordButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                frameSwordButtonActionPerformed(evt);
             }
         });
 
@@ -193,30 +198,30 @@ public class SceneFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(frameTorchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(frameKeyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(BackButton)
-                            .addGap(80, 80, 80)))))
+                    .addComponent(frameSwordButton, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))
             .addGroup(layout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(LeftButton)
-                        .addGap(39, 39, 39)
-                        .addComponent(RightButton)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addComponent(ForwardButton)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(69, 69, 69)
+                                .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(LeftButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(RightButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,92 +232,139 @@ public class SceneFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(frameTorchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(frameKeyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(frameSwordButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(ForwardButton)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LeftButton)
-                            .addComponent(RightButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BackButton)))
+                            .addComponent(LeftButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RightButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void frameTorchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frameTorchButtonActionPerformed
    currentScene=sceneList.get(currentIdx);
    currentScene.isDark=false;
    currentScene.updateButtons();
    this.displayScene(currentIdx);
    currentScene.updateDirectionButtons();
+   currentScene.updateSceneText();
    
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_frameTorchButtonActionPerformed
+    /**
+     * frameKeybutton calls the functions needed to use the key to unlock doors. 
+     * @param evt 
+     */
+    private void frameKeyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frameKeyButtonActionPerformed
    currentScene=sceneList.get(currentIdx);
    currentScene.isClosed=false;
    this.displayScene(currentIdx);
    currentScene.updateDirectionButtons();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
+   currentScene.updateSceneText();
+    }//GEN-LAST:event_frameKeyButtonActionPerformed
+    /**
+     * ForwardButton calls all of the necessary functions to travel forward
+     * within the dungeon.
+     * @param evt 
+     */
     private void ForwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardButtonActionPerformed
         nextIdx = scenetable.changeScene(currentIdx, 0);
         this.displayScene(nextIdx);
         currentScene.updateDirectionButtons();
+        currentScene.updateSceneText();
     }//GEN-LAST:event_ForwardButtonActionPerformed
-
+    /**
+     * LeftButton calls all of the necessary functions to travel to the right
+     * within the dungeon.
+     * @param evt 
+     */
     private void LeftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeftButtonActionPerformed
         nextIdx = scenetable.changeScene(currentIdx, 3);
         this.displayScene(nextIdx);
         currentScene.updateDirectionButtons();
+        currentScene.updateSceneText();
         
     }//GEN-LAST:event_LeftButtonActionPerformed
-
+    /**
+     * RightButton calls all of the necessary functions to travel to the right
+     * within the dungeon.
+     * @param evt 
+     */
     private void RightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RightButtonActionPerformed
         nextIdx = scenetable.changeScene(currentIdx, 2);
         this.displayScene(nextIdx);
         currentScene.updateDirectionButtons();
+        currentScene.updateSceneText();
     }//GEN-LAST:event_RightButtonActionPerformed
-
+    /**
+     * BackButton calls all the necessary functions to travel backwards within
+     * the dungeon.
+     * @param evt 
+     */
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         nextIdx = scenetable.changeScene(currentIdx, 1);
         this.displayScene(nextIdx);
         currentScene.updateDirectionButtons();
+        currentScene.updateSceneText();
     }//GEN-LAST:event_BackButtonActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    /**
+     * frameSwordButton is the button denoted by a sword icon on main jFrame.
+     * @param evt 
+     */
+    private void frameSwordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frameSwordButtonActionPerformed
    currentScene=sceneList.get(currentIdx);
    currentScene.isAlive=false;
    this.displayScene(currentIdx);
    currentScene.updateDirectionButtons();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+   currentScene.updateSceneText();
+    }//GEN-LAST:event_frameSwordButtonActionPerformed
+    /**
+     * setTextArea is called in the constructor of each scene to set the textbox
+     * for each scene.
+     * @param TA 
+     */
     public void setTextArea(String TA){
         jTextArea1.setText(TA);
     }
-    
+    /**
+     * repaintScene() is called to repaint a scene after a choice that alters a
+     * scene is made.
+     */
     public void repaintScene(){
         this.displayScene(currentIdx);
     }
 
-    
+    /**
+     * updateDirections enables and disables buttons based on the directions you
+     * can travel in each scene.
+     * @param forward
+     * @param back
+     * @param left
+     * @param right 
+     */
     public void updateDirections(boolean forward, boolean back, boolean left, boolean right){
         ForwardButton.setEnabled(forward);
         BackButton.setEnabled(back);
         LeftButton.setEnabled(left);
         RightButton.setEnabled(right);
         
+    }
+    
+    public void updateSceneText(String text){
+        jTextArea1.setText(text);
     }
 
 
@@ -324,9 +376,9 @@ public class SceneFrame extends javax.swing.JFrame {
     private javax.swing.JButton RightButton;
     private javax.swing.JPanel SceneManager;
     private javax.swing.JPanel SceneManager1;
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton2;
-    public javax.swing.JButton jButton3;
+    public javax.swing.JButton frameKeyButton;
+    public javax.swing.JButton frameSwordButton;
+    public javax.swing.JButton frameTorchButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

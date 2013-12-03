@@ -33,7 +33,7 @@ public class DarkRoom_Pic extends Scene {
         
         super("DarkRoom", frame);
         isDark=true;
-        sceneframe.setTextArea("First Time Viewing This\n Scene");
+
         
         try {
 
@@ -73,7 +73,7 @@ public class DarkRoom_Pic extends Scene {
     private void SwordButtonActionPerformed (java.awt.event.ActionEvent evt) {                                        
               System.out.println("Pick up sword.");
               SwordButton.setVisible(false);
-              sceneframe.jButton1.setEnabled(true);
+              sceneframe.frameSwordButton.setEnabled(true);
               
         }
     

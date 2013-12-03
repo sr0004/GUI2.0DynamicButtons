@@ -24,7 +24,7 @@ public class LockedDoor12 extends Scene {
     public LockedDoor12(SceneFrame frame) {
         super("LockedDoor12", frame);
         isClosed=true;
-        sceneframe.setTextArea("First Time Viewing This\n Scene");
+        
         
         try {            
             image = (new ImageIcon(getClass().getResource("/resources/LockedDoor_12.JPG"))).getImage();

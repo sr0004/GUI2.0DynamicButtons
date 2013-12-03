@@ -32,7 +32,7 @@ public class RightTurn_Pic3 extends Scene {
     public RightTurn_Pic3(SceneFrame frame) {
         super("FirstPanel", frame);
 
-        sceneframe.setTextArea("First Time Viewing This\n Scene");
+        
         
         try {
             //BufferedImage origImage = ImageIO.read(getClass().getResource("/resources/ForestPath.jpg"));
@@ -58,6 +58,10 @@ public class RightTurn_Pic3 extends Scene {
         sceneframe.updateDirections(false, true, false, true);
     }
     
+    @Override
+    public void updateSceneText(){
+        sceneframe.updateSceneText("This is the second scene.");
+    }
     
 
     

@@ -66,6 +66,10 @@ public abstract class Scene extends JPanel {
     public void updateDirectionButtons(){
     
     }
+    
+    public void updateSceneText(){
+        
+    }
         
 
  public abstract void initControlButtons();

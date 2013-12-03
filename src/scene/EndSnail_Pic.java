@@ -38,7 +38,7 @@ public class EndSnail_Pic extends Scene {
         super("FirstPanel", frame);
         
         isAlive=true;
-        sceneframe.setTextArea("First Time Viewing This\n Scene");
+        
         
         try {
             

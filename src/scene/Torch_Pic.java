@@ -31,7 +31,7 @@ public class Torch_Pic extends Scene {
  */
     public Torch_Pic(SceneFrame frame) {
         super("TorchPic", frame);
-        sceneframe.setTextArea("First Time Viewing This\n Scene");
+        
         
         try {
 
@@ -69,8 +69,8 @@ public class Torch_Pic extends Scene {
     private void TorchButtonActionPerformed (java.awt.event.ActionEvent evt) {                                        
               System.out.println("Pick up key");
               TorchButton.setVisible(false);
-              sceneframe.jButton2.setEnabled(true);
-              sceneframe.jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/torch.gif")));
+              sceneframe.frameTorchButton.setEnabled(true);
+              sceneframe.frameTorchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/torch.gif")));
               
     }
     
