@@ -44,6 +44,10 @@ public class Torch_Pic extends Scene {
 
     }
     
+    
+    /**
+     * Overrides the function initControlButtons.
+     */
     @Override
     public void initControlButtons(){
        this.setLayout(null);
@@ -65,7 +69,9 @@ public class Torch_Pic extends Scene {
     }
     
     
-    
+    /**
+     * Defines TorchButton action event.
+     */
     private void TorchButtonActionPerformed (java.awt.event.ActionEvent evt) {                                        
               System.out.println("Pick up key");
               TorchButton.setVisible(false);
@@ -77,7 +83,9 @@ public class Torch_Pic extends Scene {
    
     
     
-    
+    /**
+     * Overrides the function paintComponent.
+     */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
@@ -89,11 +97,17 @@ public class Torch_Pic extends Scene {
                
     }         
     
+    /**
+     * Overrides the function displayEvents.
+     */
     @Override
     public void displayEvents(){
         
     }
     
+    /**
+     * Overrides the function updateDirectionButtons.
+     */
     @Override
     public void updateDirectionButtons(){
         sceneframe.updateDirections(false, true, false, false);

@@ -39,6 +39,9 @@ public abstract class Scene extends JPanel {
         sceneframe = frame;
     }
     
+    /**
+     * BufferedImaged resizes images and draws them for each scene.
+     */
     public static BufferedImage resizeImage(BufferedImage originalImage, int type){
 	BufferedImage resizedImage = new BufferedImage(IMG_WIDTH, IMG_HEIGHT, type);
 	Graphics2D g = resizedImage.createGraphics();
@@ -48,25 +51,43 @@ public abstract class Scene extends JPanel {
 	return resizedImage;
     }
     
+    /**
+     * setFrameRef sets an instance of jFrame = to a predefined frame.
+     */
     public void setFrameRef(SceneFrame frame){
         sceneframe = frame;
     }
-
+    
+    /**
+     * Gets the name for each Scene card.
+     */
     public String getCardName() {
         return sceneName;
     }
     
+    /**
+     * Set the image variable in scenes with multiple possible images.
+     */
     public void setImage(){
     }
     
+    /**
+     * Updates the jFrames item buttons.
+     */
     public void updateButtons(){
         
     }
     
+    /**
+     * enables or disables direction buttons based on the scene.
+     */
     public void updateDirectionButtons(){
     
     }
     
+    /**
+     * Updates jTextPanel1 for each unique scene.
+     */
     public void updateSceneText(){
         
     }

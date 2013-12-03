@@ -44,11 +44,17 @@ public class HallwayLeft_Pic15 extends Scene {
 
     }
     
+    
+    /**
+     * Overrides the function initControlButtons.
+     */
     @Override
     public void initControlButtons(){
   
     }
-    
+    /**
+     * Overrides the function updateDirectionButtons.
+     */
     @Override
     public void updateDirectionButtons(){
         sceneframe.updateDirections(true, true, false, false);
@@ -58,7 +64,9 @@ public class HallwayLeft_Pic15 extends Scene {
    
     
     
-    
+    /**
+     * Overrides the function paintComponent.
+     */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
@@ -70,12 +78,15 @@ public class HallwayLeft_Pic15 extends Scene {
                
     }         
     
+    /**
+     * Overrides the function displayEvents.
+     */
     @Override
     public void displayEvents(){
         
     }
         
-    private static final int ICON_WIDTH = 400;
+   private static final int ICON_WIDTH = 400;
    private static final int ICON_HEIGHT = 100;
    private static final int CAR_WIDTH = 100;
 }

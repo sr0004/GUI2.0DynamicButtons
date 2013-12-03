@@ -1,14 +1,8 @@
 
 package main;
 
-import scene.DoorPane;
+
 import scene.*;
-
-
-import scene.ForestPanel;
-import java.awt.Toolkit;
-import java.awt.Dimension;
-import java.awt.Window;
 
 /**
  *
@@ -22,20 +16,21 @@ public class EngineGame {
     
     private static int WIDTH = 1280;
     private static int HEIGHT = 800;
-        
+    /**
+     * Creates an instance of EngineGame.
+     */   
     public EngineGame(){
-       // Toolkit tool = Toolkit.getDefaultToolkit();
-        //Dimension dim = tool.getScreenSize();
+
         
         sceneframe = new SceneFrame();
         sceneframe.dispose();
-        //sceneframe.setType(Window.Type.NORMAL);
-        //sceneframe.setSize(WIDTH, HEIGHT);        
         sceneframe.setVisible(true);   
 
 }
        
-
+   /**
+    * Adds each scene to sceneframe.
+    */
    public void addSceneCards() {       
   
        currentScene = new StartingCell_Pic(sceneframe);

@@ -9,7 +9,11 @@ import main.EngineGame;
 import scene.SceneTable;
 import java.util.ArrayList;
 
-
+/**
+ * SceneFrame extends the class JFrame and adds on extra features needed for
+ * Dungeon Escape.
+ * @author sra0004
+ */
 public class SceneFrame extends javax.swing.JFrame {  
     
     private ArrayList<Scene> sceneList;
@@ -31,7 +35,11 @@ public class SceneFrame extends javax.swing.JFrame {
         scenetable.initTable();
         currentIdx = 0;
     }   
-    
+    /**
+     * addScene adds an instance of Scene to SceneManager
+     * @param aScene
+     * @param idx 
+     */
     public void addScene(Scene aScene, int idx){
         
         sceneList.add(idx, aScene);
@@ -43,13 +51,16 @@ public class SceneFrame extends javax.swing.JFrame {
     }
     
     
-    
+    /**
+     * displayScene adds the current scene to be displayed to an ArrayList of
+     * scenes used to organize them.
+     * @param idx 
+     */
     public void displayScene(int idx){
         
         if (idx != -1)
         {
             currentScene = sceneList.get(idx);
-            buttonVis = scenetable.getButtonVisibility(idx);
             currentScene.displayEvents();
             SceneManager.getComponent(0).setVisible(false);
             SceneManager.remove(0);
@@ -363,6 +374,12 @@ public class SceneFrame extends javax.swing.JFrame {
         
     }
     
+    
+    /**
+     * updateSceneText will get the text to be displayed in each scene
+     * describing what is happening and pointing out any important features.
+     * @param text 
+     */
     public void updateSceneText(String text){
         jTextArea1.setText(text);
     }

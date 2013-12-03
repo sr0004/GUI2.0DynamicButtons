@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 public class ScenePanel extends JPanel {
 
     private static class Layout implements LayoutManager {
-
+        @Override
         public void addLayoutComponent(String name, Component child) {
             if (name != null) {
                 child.setName(name);
@@ -29,6 +29,8 @@ public class ScenePanel extends JPanel {
          * If this child was visible, then make the first remaining child
          * visible.
          */
+        
+        @Override
         public void removeLayoutComponent(Component child) {
             if (child.isVisible()) {
                 Container parent = child.getParent();

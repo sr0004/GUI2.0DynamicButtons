@@ -35,10 +35,7 @@ public class RightTurn_Pic3 extends Scene {
         
         
         try {
-            //BufferedImage origImage = ImageIO.read(getClass().getResource("/resources/ForestPath.jpg"));
-           //int type = origImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : origImage.getType();
-            //image = super.resizeImage(origImage, type);
-            //ImageIO.write(resizedimage, "jpg", new File("/resources/ForestPath2.jpg"));
+
             image = (new ImageIcon(getClass().getResource("/resources/RightTurn_Pic3.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
@@ -48,16 +45,24 @@ public class RightTurn_Pic3 extends Scene {
 
     }
     
+    /**
+     * Overrides the function initControlButtons.
+     */
     @Override
     public void initControlButtons(){
   
     }
-    
-        @Override
+    /**
+     * Overrides the function updateDirectionButtons.
+     */
+    @Override
     public void updateDirectionButtons(){
         sceneframe.updateDirections(false, true, false, true);
     }
     
+    /**
+     * Overrides the function updateSceneText.
+     */
     @Override
     public void updateSceneText(){
         sceneframe.updateSceneText("This is the second scene.");
@@ -65,8 +70,10 @@ public class RightTurn_Pic3 extends Scene {
     
 
     
-    
-    
+    /**
+     * Overrides the function painComponent.
+     */
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
@@ -78,12 +85,15 @@ public class RightTurn_Pic3 extends Scene {
                
     }         
     
+    /**
+     * Overrides the function displayEvents.
+     */
     @Override
     public void displayEvents(){
         
     }
         
-    private static final int ICON_WIDTH = 400;
+   private static final int ICON_WIDTH = 400;
    private static final int ICON_HEIGHT = 100;
    private static final int CAR_WIDTH = 100;
 }

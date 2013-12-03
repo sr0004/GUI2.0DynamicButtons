@@ -15,22 +15,30 @@ public final class SceneTable {
     private static int[][] scenetable;
    
       //index of the scene row
-      
+    /**
+     * creates and instance of an integer array named scenetable.
+     */ 
     public SceneTable(){
         scenetable = new int[20][4];
         initTable();
         
     }
     
-    public int[] getButtonVisibility(int row) {
-        return scenetable[row];   
-    }
     
+    /**
+     * Moves to the next scene defined by scenetable.
+     */
     public int changeScene(int x, int y){
         int c = scenetable[x][y]; 
         return c;        
     }
     
+    
+    /**
+     * An integer array defining the rooms within a dungeon. Used to determine 
+     * which scenes a player can traverse between.
+     * 
+     */
     public void initTable(){
         //forest: 0 F 1 B 2 R 3 L
         scenetable[0][0] = 1;

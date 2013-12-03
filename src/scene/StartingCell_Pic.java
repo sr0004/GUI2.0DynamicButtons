@@ -47,6 +47,10 @@ public class StartingCell_Pic extends Scene {
 
     }
     
+    
+   /**
+     * Overrides the function initControlButtons.
+     */
     @Override
     public void initControlButtons(){
   
@@ -55,7 +59,9 @@ public class StartingCell_Pic extends Scene {
    
     
     
-    
+    /**
+     * Overrides the function paintComponent.
+     */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
@@ -67,17 +73,26 @@ public class StartingCell_Pic extends Scene {
                
     }         
     
+    /**
+     * Overrides the function displayEvents.
+     */
     @Override
     public void displayEvents(){
         
         
     }
     
+    /**
+     * Overrides the function updateSceneText.
+     */
     @Override
     public void updateSceneText(){
         sceneframe.updateSceneText("This is the first scene");
     }
     
+    /**
+     * Overrides the function updateDirectionButtons.
+     */
     @Override
     public void updateDirectionButtons(){
         sceneframe.updateDirections(true, false, false, false);

@@ -31,20 +31,34 @@ public class  SnailFar_29 extends Scene {
         
 
     }
+    
+    /**
+     * Overrides the function initControlButtons.
+     */
     @Override
     public void initControlButtons() {
         
     }
+    
+    /**
+     * Overrides the function displayEvents.
+     */
     @Override
     public void displayEvents() {
     }
     
+    /**
+     * Overrides the function updateDirectionButtons.
+     */
     @Override
     public void updateDirectionButtons(){
         sceneframe.updateDirections(true, true, false, false);
 
     }
     
+    /**
+     * Overrides the function paintComponent.
+     */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;

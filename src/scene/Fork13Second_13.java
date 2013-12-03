@@ -30,20 +30,34 @@ public class  Fork13Second_13 extends Scene {
         }
         
     }
+    
+    /**
+     * Overrides the function initControlButtons.
+     */
     @Override
     public void initControlButtons() {
         
     }
+    
+    /**
+     * Overrides the function displayEvents.
+     */
     @Override
     public void displayEvents() {
     }
     
+    /**
+     * Overrides the function updatedirectionButtons.
+     */
     @Override
     public void updateDirectionButtons(){
         sceneframe.updateDirections(false, true, true, true);
 
     }
     
+    /**
+     * Overrides the function paintComponent.
+     */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;

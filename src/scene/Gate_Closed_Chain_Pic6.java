@@ -47,6 +47,9 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
 
     }
     
+    /**
+     * Overrides the function initControlButtons.
+     */
     @Override
     public void initControlButtons(){
                this.setLayout(null);
@@ -67,7 +70,9 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
        this.add(GateButton);
   
     }
-    
+    /**
+     * Defines GateButton action event.
+     */
     private void GateButtonActionPerformed (java.awt.event.ActionEvent evt) {                                        
               System.out.println("Pull Chain");
               isClosed=false;
@@ -80,7 +85,9 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
    
     
     
-    
+    /**
+     * Overrides the function paintComponent.
+     */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
@@ -95,17 +102,25 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
         }
                
     }         
-    
+    /**
+     * Overrides the function displayEvents.
+     */
     @Override
     public void displayEvents(){
         
     }
     
+    /**
+     * Overrides the function setImage.
+     */
     @Override
     public void setImage(){
         isClosed=false;
     }
     
+    /**
+     * Overrides the function updateDirectionButtons.
+     */
     @Override
     public void updateDirectionButtons(){
         if(isClosed==true)
@@ -116,9 +131,9 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
     }
 
         
-    private static final int ICON_WIDTH = 400;
+   private static final int ICON_WIDTH = 400;
    private static final int ICON_HEIGHT = 100;
    private static final int CAR_WIDTH = 100;
    
-    private javax.swing.JButton GateButton;
+   private javax.swing.JButton GateButton;
 }

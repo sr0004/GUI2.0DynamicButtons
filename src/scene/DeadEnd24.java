@@ -30,15 +30,27 @@ public class DeadEnd24 extends Scene {
         }
         
     }
+    
+    /**
+     * Overrides the function initControlButtons.
+     */
     @Override
     public void initControlButtons() {
         
     }
+    
+    /**
+     * Overrides the function displayEvents.
+     */
     @Override
     public void displayEvents() {
     }
     
-        public void paintComponent(Graphics g) {
+    /**
+     * Overrides the function paintComponents.
+     */
+    @Override
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
         if (image != null) {

@@ -26,16 +26,16 @@ import javax.swing.Timer;
  */
 public class EndSnail_Pic extends Scene {
     
+
+    boolean eventOn;
 /**
  * Creates a new EndSnail_Pic Object
- */
-    boolean eventOn;
-    
+ */    
     
     public EndSnail_Pic(SceneFrame frame) {
         
         
-        super("FirstPanel", frame);
+        super("EndSnail_Pic", frame);
         
         isAlive=true;
         
@@ -56,11 +56,15 @@ public class EndSnail_Pic extends Scene {
         
 
     }
-    
+    /**
+     * Overrides the function initControlButtons.
+     */
     @Override
     public void initControlButtons(){
     }
-    
+    /**
+     * Overrides the function updateDirectionButtons.
+     */
     @Override
     public void updateDirectionButtons(){
         sceneframe.updateDirections(false, true, false, false);
@@ -73,7 +77,9 @@ public class EndSnail_Pic extends Scene {
     
    
     
-    
+    /**
+     * Overrides the function paintComponent.
+     */
     
     @Override
     public void paintComponent(Graphics g) {
@@ -92,16 +98,23 @@ public class EndSnail_Pic extends Scene {
                
     }         
     
+    /**
+     * Overrides the function displayEvents.
+     */
     @Override
     public void displayEvents(){
         
     }
+    
+    /**
+     * Overrides the function setImage.
+     */
     @Override
     public void setImage(){
         isAlive=false;
         
     }
-    private javax.swing.JButton keyButton;
+   
     
         
    private static final int ICON_WIDTH = 400;

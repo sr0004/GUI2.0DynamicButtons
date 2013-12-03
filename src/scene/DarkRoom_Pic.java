@@ -46,7 +46,9 @@ public class DarkRoom_Pic extends Scene {
         
 
     }
-    
+    /**
+     * Overrides the function initControlButtons.
+     */
     @Override
     public void initControlButtons(){
                        this.setLayout(null);
@@ -69,14 +71,20 @@ public class DarkRoom_Pic extends Scene {
        this.add(SwordButton);
   
     }
-    
+    /**
+     * SwordButton event controlled.
+     * @param evt 
+     */
     private void SwordButtonActionPerformed (java.awt.event.ActionEvent evt) {                                        
               System.out.println("Pick up sword.");
               SwordButton.setVisible(false);
               sceneframe.frameSwordButton.setEnabled(true);
               
         }
-    
+    /**
+     * Overrides the function updateButtons.
+     */
+    @Override
     public void updateButtons(){
         SwordButton.setVisible(true);
     }
@@ -86,8 +94,10 @@ public class DarkRoom_Pic extends Scene {
     
    
     
-    
-    
+    /**
+     * Overrides the function paintComponent.
+     */
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
@@ -102,11 +112,16 @@ public class DarkRoom_Pic extends Scene {
         }
                
     }         
-    
+    /**
+     * Overrides the function displayEvents.
+     */
     @Override
     public void displayEvents(){
         
     }
+    /**
+     * Overrides the function updateDirectionButtons.
+     */
     @Override
     
     public void updateDirectionButtons(){
@@ -114,6 +129,9 @@ public class DarkRoom_Pic extends Scene {
 
     }
     
+    /**
+     * Overrides the function setImage.
+     */
     
     @Override
     public void setImage(){

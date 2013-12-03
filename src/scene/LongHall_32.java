@@ -32,6 +32,10 @@ public class LongHall_32 extends Scene{
         this.initControlButtons(); //Change to init
     }
     
+    /**
+     * Overrides the function paintComponents.
+     */
+    
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
@@ -44,19 +48,26 @@ public class LongHall_32 extends Scene{
                 }
             }
                         
-    
+    /**
+     * Overrides the function displayEvents.
+     */
     @Override
     public void displayEvents(){
         
     }
     
+    /**
+     * Overrides the function updateDirectionButtons.
+     */
     @Override
     public void updateDirectionButtons(){
         sceneframe.updateDirections(true, true, true, false);
 
     }
        
-    
+    /**
+     * Overrides the function initControlButtons.
+     */
     @Override
     public void initControlButtons(){
       

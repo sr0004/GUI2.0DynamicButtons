@@ -36,14 +36,24 @@ public class LockedDoor12 extends Scene {
 
     }
     
+    /**
+     * Overrides the function initControlButtons.
+     */
     @Override
     public void initControlButtons() {
         
     }
+    
+    /**
+     * Overrides the function displayEvents.
+     */
     @Override
     public void displayEvents() {
     }
     
+    /**
+     * Overrides the function updateDirectionButtons.
+     */
     @Override
     public void updateDirectionButtons(){
         sceneframe.updateDirections(false, true, false, false);
@@ -52,6 +62,9 @@ public class LockedDoor12 extends Scene {
 
     }
     
+    /**
+     * Overrides the function paintComponent.
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -68,6 +81,10 @@ public class LockedDoor12 extends Scene {
         
 
     } 
+    
+    /**
+     * Overrides the function SetImage.
+     */
         @Override
         public void setImage(){
         isClosed=false; 
