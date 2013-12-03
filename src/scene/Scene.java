@@ -18,6 +18,7 @@ public abstract class Scene extends JPanel {
     public Image image;
     public Image image2;
     public boolean isClosed, isAlive, isDark;
+
     
 
     
@@ -60,6 +61,10 @@ public abstract class Scene extends JPanel {
     
     public void updateButtons(){
         
+    }
+    
+    public void updateDirectionButtons(){
+    
     }
         
 

@@ -49,6 +49,12 @@ public class LongHall_32 extends Scene{
     public void displayEvents(){
         
     }
+    
+    @Override
+    public void updateDirectionButtons(){
+        sceneframe.updateDirections(true, true, true, false);
+
+    }
        
     
     @Override

@@ -73,6 +73,8 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
               isClosed=false;
               sceneframe.repaintScene();
               GateButton.setVisible(false);
+              sceneframe.updateDirections(true, true, false, false);
+              
               
         }
    
@@ -102,6 +104,12 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
     @Override
     public void setImage(){
         isClosed=false;
+    }
+    
+    @Override
+    public void updateDirectionButtons(){
+        sceneframe.updateDirections(false, true, false, false);
+
     }
         
     private static final int ICON_WIDTH = 400;

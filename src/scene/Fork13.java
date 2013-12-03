@@ -36,6 +36,13 @@ public class Fork13 extends Scene {
     public void initControlButtons() {
         
     }
+    
+    @Override
+    public void updateDirectionButtons(){
+        sceneframe.updateDirections(false, true, true, true);
+
+    }
+    
     @Override
     public void displayEvents() {
     }

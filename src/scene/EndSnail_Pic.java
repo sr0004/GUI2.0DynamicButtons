@@ -60,6 +60,15 @@ public class EndSnail_Pic extends Scene {
     @Override
     public void initControlButtons(){
     }
+    
+    @Override
+    public void updateDirectionButtons(){
+        sceneframe.updateDirections(false, true, false, false);
+        if(isAlive==false)
+            sceneframe.updateDirections(true, true, false, false);
+            
+
+    }
 
     
    

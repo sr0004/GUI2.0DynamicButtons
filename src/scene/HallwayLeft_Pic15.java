@@ -49,6 +49,12 @@ public class HallwayLeft_Pic15 extends Scene {
   
     }
     
+    @Override
+    public void updateDirectionButtons(){
+        sceneframe.updateDirections(true, true, false, false);
+
+    }
+    
    
     
     

@@ -93,6 +93,12 @@ public class Torch_Pic extends Scene {
     public void displayEvents(){
         
     }
+    
+    @Override
+    public void updateDirectionButtons(){
+        sceneframe.updateDirections(false, true, false, false);
+
+    }
         
    private static final int ICON_WIDTH = 400;
    private static final int ICON_HEIGHT = 100;

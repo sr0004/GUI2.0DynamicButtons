@@ -43,6 +43,15 @@ public class LockedDoor12 extends Scene {
     @Override
     public void displayEvents() {
     }
+    
+    @Override
+    public void updateDirectionButtons(){
+        sceneframe.updateDirections(false, true, false, false);
+        if(isClosed==false)
+            sceneframe.updateDirections(true, true, false, false);
+
+    }
+    
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

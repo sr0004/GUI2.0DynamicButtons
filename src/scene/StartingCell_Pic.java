@@ -40,6 +40,8 @@ public class StartingCell_Pic extends Scene {
         
         this.initControlButtons(); //Change to init
         
+        sceneframe.updateDirections(true, false, false, false);
+        
 
     }
     
@@ -67,6 +69,11 @@ public class StartingCell_Pic extends Scene {
     public void displayEvents(){
         
         
+    }
+    
+    @Override
+    public void updateDirectionButtons(){
+        sceneframe.updateDirections(true, false, false, false);
     }
         
    private static final int ICON_WIDTH = 400;

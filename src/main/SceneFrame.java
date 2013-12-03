@@ -255,6 +255,7 @@ public class SceneFrame extends javax.swing.JFrame {
    currentScene.isDark=false;
    currentScene.updateButtons();
    this.displayScene(currentIdx);
+   currentScene.updateDirectionButtons();
    
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -262,32 +263,39 @@ public class SceneFrame extends javax.swing.JFrame {
    currentScene=sceneList.get(currentIdx);
    currentScene.isClosed=false;
    this.displayScene(currentIdx);
+   currentScene.updateDirectionButtons();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void ForwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardButtonActionPerformed
         nextIdx = scenetable.changeScene(currentIdx, 0);
         this.displayScene(nextIdx);
+        currentScene.updateDirectionButtons();
     }//GEN-LAST:event_ForwardButtonActionPerformed
 
     private void LeftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeftButtonActionPerformed
         nextIdx = scenetable.changeScene(currentIdx, 3);
         this.displayScene(nextIdx);
+        currentScene.updateDirectionButtons();
+        
     }//GEN-LAST:event_LeftButtonActionPerformed
 
     private void RightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RightButtonActionPerformed
         nextIdx = scenetable.changeScene(currentIdx, 2);
         this.displayScene(nextIdx);
+        currentScene.updateDirectionButtons();
     }//GEN-LAST:event_RightButtonActionPerformed
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         nextIdx = scenetable.changeScene(currentIdx, 1);
         this.displayScene(nextIdx);
+        currentScene.updateDirectionButtons();
     }//GEN-LAST:event_BackButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
    currentScene=sceneList.get(currentIdx);
    currentScene.isAlive=false;
    this.displayScene(currentIdx);
+   currentScene.updateDirectionButtons();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void setTextArea(String TA){
@@ -297,7 +305,15 @@ public class SceneFrame extends javax.swing.JFrame {
     public void repaintScene(){
         this.displayScene(currentIdx);
     }
+
     
+    public void updateDirections(boolean forward, boolean back, boolean left, boolean right){
+        ForwardButton.setEnabled(forward);
+        BackButton.setEnabled(back);
+        LeftButton.setEnabled(left);
+        RightButton.setEnabled(right);
+        
+    }
 
 
 

@@ -107,6 +107,13 @@ public class DarkRoom_Pic extends Scene {
     public void displayEvents(){
         
     }
+    @Override
+    
+    public void updateDirectionButtons(){
+        sceneframe.updateDirections(false, true, false, false);
+
+    }
+    
     
     @Override
     public void setImage(){

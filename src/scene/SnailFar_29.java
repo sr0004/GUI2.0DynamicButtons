@@ -39,6 +39,12 @@ public class  SnailFar_29 extends Scene {
     public void displayEvents() {
     }
     
+    @Override
+    public void updateDirectionButtons(){
+        sceneframe.updateDirections(true, true, false, false);
+
+    }
+    
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;

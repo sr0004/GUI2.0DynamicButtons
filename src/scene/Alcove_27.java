@@ -34,6 +34,13 @@ public class  Alcove_27 extends Scene {
     public void initControlButtons() {
         
     }
+    
+    @Override
+    public void updateDirectionButtons(){
+        sceneframe.updateDirections(false, true, false, false);
+
+    }
+    
     @Override
     public void displayEvents() {
     }

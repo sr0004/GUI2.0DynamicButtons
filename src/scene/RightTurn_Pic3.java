@@ -31,6 +31,7 @@ public class RightTurn_Pic3 extends Scene {
  */
     public RightTurn_Pic3(SceneFrame frame) {
         super("FirstPanel", frame);
+
         sceneframe.setTextArea("First Time Viewing This\n Scene");
         
         try {
@@ -50,6 +51,11 @@ public class RightTurn_Pic3 extends Scene {
     @Override
     public void initControlButtons(){
   
+    }
+    
+        @Override
+    public void updateDirectionButtons(){
+        sceneframe.updateDirections(false, true, false, true);
     }
     
     
