@@ -176,6 +176,7 @@ public class SceneFrame extends javax.swing.JFrame {
         });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Steel_sword_icon.png"))); // NOI18N
+        jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -250,12 +251,17 @@ public class SceneFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+   currentScene=sceneList.get(currentIdx);
+   currentScene.isDark=false;
+   currentScene.updateButtons();
+   this.displayScene(currentIdx);
+   
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-            // TODO add your handling code here:
+   currentScene=sceneList.get(currentIdx);
+   currentScene.isClosed=false;
+   this.displayScene(currentIdx);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void ForwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardButtonActionPerformed
@@ -280,13 +286,19 @@ public class SceneFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
    currentScene=sceneList.get(currentIdx);
-   currentScene.isOpen=false;
+   currentScene.isAlive=false;
    this.displayScene(currentIdx);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void setTextArea(String TA){
         jTextArea1.setText(TA);
     }
+    
+    public void repaintScene(){
+        this.displayScene(currentIdx);
+    }
+    
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -296,7 +308,7 @@ public class SceneFrame extends javax.swing.JFrame {
     private javax.swing.JButton RightButton;
     private javax.swing.JPanel SceneManager;
     private javax.swing.JPanel SceneManager1;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton1;
     public javax.swing.JButton jButton2;
     public javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;

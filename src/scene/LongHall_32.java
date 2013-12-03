@@ -25,7 +25,7 @@ public class LongHall_32 extends Scene{
                           
         try {
 
-            image = (new ImageIcon(getClass().getResource("/resources/ForestPath.jpg"))).getImage();
+            image = (new ImageIcon(getClass().getResource("/resources/LongHall_32.jpg"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         
@@ -35,7 +35,7 @@ public class LongHall_32 extends Scene{
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
-            if (image != null && image2 != null) {               
+            if (image != null) {               
 
                     boolean val = g.drawImage(image, 0, 0, 400, 300, this);
             }

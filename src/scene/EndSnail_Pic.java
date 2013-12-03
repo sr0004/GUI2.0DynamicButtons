@@ -37,7 +37,7 @@ public class EndSnail_Pic extends Scene {
         
         super("FirstPanel", frame);
         
-        isOpen=true;
+        isAlive=true;
         sceneframe.setTextArea("First Time Viewing This\n Scene");
         
         try {
@@ -71,9 +71,9 @@ public class EndSnail_Pic extends Scene {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
         if ((image != null)||(image2!= null)) {
-            if(isOpen==true){
+            if(isAlive==true){
             boolean val = g.drawImage(image, 0, 0, 400, 300, this);
-            } else if (isOpen ==false){
+            } else if (isAlive ==false){
                 boolean val = g.drawImage(image2, 0, 0, 400, 300, this);
             }
         } else {
@@ -89,7 +89,7 @@ public class EndSnail_Pic extends Scene {
     }
     @Override
     public void setImage(){
-        isOpen=false;
+        isAlive=false;
         
     }
     private javax.swing.JButton keyButton;

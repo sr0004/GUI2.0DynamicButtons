@@ -30,13 +30,15 @@ public class DarkRoom_Pic extends Scene {
  * Creates a DarkRoom_Pic Object
  */
     public DarkRoom_Pic(SceneFrame frame) {
+        
         super("DarkRoom", frame);
+        isDark=true;
         sceneframe.setTextArea("First Time Viewing This\n Scene");
         
         try {
 
             image = (new ImageIcon(getClass().getResource("/resources/DarkRoom.JPG"))).getImage();
-            //image2 = (new ImageIcon(getClass().getResource("/resources/LitRoom.JPG"))).getImage();
+            image2 = (new ImageIcon(getClass().getResource("/resources/LitRoom.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         
@@ -47,8 +49,40 @@ public class DarkRoom_Pic extends Scene {
     
     @Override
     public void initControlButtons(){
+                       this.setLayout(null);
+
+
+       SwordButton = new JButton("");
+       SwordButton.setVisible(false);
+       SwordButton.setBounds(150, 100, 100, 150);
+       SwordButton.setContentAreaFilled(false);
+       SwordButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Steel_sword_icon.png")));
+       SwordButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SwordButtonActionPerformed(evt);
+            }
+        });
+       SwordButton.setOpaque(false);
+       SwordButton.setContentAreaFilled(false);
+       SwordButton.setBorderPainted(false);
+       SwordButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+       this.add(SwordButton);
   
     }
+    
+    private void SwordButtonActionPerformed (java.awt.event.ActionEvent evt) {                                        
+              System.out.println("Pick up sword.");
+              SwordButton.setVisible(false);
+              sceneframe.jButton1.setEnabled(true);
+              
+        }
+    
+    public void updateButtons(){
+        SwordButton.setVisible(true);
+    }
+    
+  
+    
     
    
     
@@ -57,8 +91,12 @@ public class DarkRoom_Pic extends Scene {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
-        if (image != null) {
-            boolean val = g.drawImage(image, 0, 0, 400, 300, this);            
+        if ((image != null)||(image2!= null)) {
+            if(isDark==true){
+            boolean val = g.drawImage(image, 0, 0, 400, 300, this);
+            } else if (isDark ==false){
+                boolean val = g.drawImage(image2, 0, 0, 400, 300, this);
+            }           
         } else {
             System.out.println("Image not found");
         }
@@ -69,8 +107,14 @@ public class DarkRoom_Pic extends Scene {
     public void displayEvents(){
         
     }
+    
+    @Override
+    public void setImage(){
+        isDark=false;
+    }
         
-    private static final int ICON_WIDTH = 400;
+   private static final int ICON_WIDTH = 400;
    private static final int ICON_HEIGHT = 100;
    private static final int CAR_WIDTH = 100;
+   private javax.swing.JButton SwordButton;
 }

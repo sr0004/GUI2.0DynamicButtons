@@ -19,6 +19,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.Timer;
+import main.SceneFrame;
 
 /**
  *
@@ -31,12 +32,13 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
  */
     public Gate_Closed_Chain_Pic6(SceneFrame frame) {
         super("FirstPanel", frame);
-        sceneframe.setTextArea("First Time Viewing This\n Scene");
+        isClosed=true;
+        
         
         try {
 
             image = (new ImageIcon(getClass().getResource("/resources/Gate_Closed_Chain_Pic6.JPG"))).getImage();
-            //image2 = (new ImageIcon(getClass().getResource("/resources/Gate_Open_Chain_Pic6.JPG"))).getImage();
+            image2 = (new ImageIcon(getClass().getResource("/resources/Gate_Open_Chain_Pic6.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         
@@ -47,9 +49,32 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
     
     @Override
     public void initControlButtons(){
+               this.setLayout(null);
+
+       
+       GateButton = new JButton("");
+       GateButton.setBounds(310, 20, 30, 150);
+       GateButton.setContentAreaFilled(false);
+       GateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GateButtonActionPerformed(evt);
+            }
+        });
+       GateButton.setOpaque(false);
+       GateButton.setContentAreaFilled(false);
+       GateButton.setBorderPainted(false);
+       GateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+       this.add(GateButton);
   
     }
     
+    private void GateButtonActionPerformed (java.awt.event.ActionEvent evt) {                                        
+              System.out.println("Pull Chain");
+              isClosed=false;
+              sceneframe.repaintScene();
+              GateButton.setVisible(false);
+              
+        }
    
     
     
@@ -57,8 +82,12 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
-        if (image != null) {
-            boolean val = g.drawImage(image, 0, 0, 400, 300, this);            
+        if ((image != null)||(image2!= null)) {
+            if(isClosed==true){
+            boolean val = g.drawImage(image, 0, 0, 400, 300, this);
+            } else if (isClosed ==false){
+                boolean val = g.drawImage(image2, 0, 0, 400, 300, this);
+            }          
         } else {
             System.out.println("Image not found");
         }
@@ -69,8 +98,15 @@ public class Gate_Closed_Chain_Pic6 extends Scene {
     public void displayEvents(){
         
     }
+    
+    @Override
+    public void setImage(){
+        isClosed=false;
+    }
         
     private static final int ICON_WIDTH = 400;
    private static final int ICON_HEIGHT = 100;
    private static final int CAR_WIDTH = 100;
+   
+    private javax.swing.JButton GateButton;
 }

@@ -16,8 +16,10 @@ import java.awt.Graphics2D;
 public abstract class Scene extends JPanel {
 
     public Image image;
-    public boolean isOpen=true;
     public Image image2;
+    public boolean isClosed, isAlive, isDark;
+    
+
     
    
     //public BufferedImage yeah;
@@ -54,6 +56,10 @@ public abstract class Scene extends JPanel {
     }
     
     public void setImage(){
+    }
+    
+    public void updateButtons(){
+        
     }
         
 

@@ -30,14 +30,11 @@ public class DoorPane extends Scene {
  * Creates a new ForestScene Object
  */
     public DoorPane(SceneFrame frame) {
-        super("FirstPanel", frame);
-        sceneframe.setTextArea("First Time Viewing This\n Scene");
+        super("DoorPane", frame);
+
         
         try {
-            //BufferedImage origImage = ImageIO.read(getClass().getResource("/resources/ForestPath.jpg"));
-           //int type = origImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : origImage.getType();
-            //image = super.resizeImage(origImage, type);
-            //ImageIO.write(resizedimage, "jpg", new File("/resources/ForestPath2.jpg"));
+
             image = (new ImageIcon(getClass().getResource("/resources/Door&Vase.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }

@@ -46,7 +46,32 @@ public class Torch_Pic extends Scene {
     
     @Override
     public void initControlButtons(){
-  
+       this.setLayout(null);
+
+       
+       TorchButton = new JButton("");
+       TorchButton.setBounds(165, 70, 80, 130);
+       TorchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/torch.gif")));
+       TorchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TorchButtonActionPerformed(evt);
+            }
+        });
+       TorchButton.setOpaque(true);
+       TorchButton.setContentAreaFilled(false);
+       TorchButton.setBorderPainted(false);
+       TorchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+       this.add(TorchButton);
+    }
+    
+    
+    
+    private void TorchButtonActionPerformed (java.awt.event.ActionEvent evt) {                                        
+              System.out.println("Pick up key");
+              TorchButton.setVisible(false);
+              sceneframe.jButton2.setEnabled(true);
+              sceneframe.jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/torch.gif")));
+              
     }
     
    
@@ -69,7 +94,8 @@ public class Torch_Pic extends Scene {
         
     }
         
-    private static final int ICON_WIDTH = 400;
+   private static final int ICON_WIDTH = 400;
    private static final int ICON_HEIGHT = 100;
    private static final int CAR_WIDTH = 100;
+   private javax.swing.JButton TorchButton;
 }

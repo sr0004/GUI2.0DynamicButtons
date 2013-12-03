@@ -16,17 +16,19 @@ import scene.Scene;
 public class LockedDoor12 extends Scene {
 
     Boolean eventOn;
+    
 
 /**
  * Creates a new LockedDoor12 Object
  */
     public LockedDoor12(SceneFrame frame) {
-        super("FirstPanel", frame);
+        super("LockedDoor12", frame);
+        isClosed=true;
         sceneframe.setTextArea("First Time Viewing This\n Scene");
         
         try {            
             image = (new ImageIcon(getClass().getResource("/resources/LockedDoor_12.JPG"))).getImage();
-            //image2 = (new ImageIcon(getClass().getResource("/resources/OpenDoor_12.JPG"))).getImage();
+            image2 = (new ImageIcon(getClass().getResource("/resources/OpenDoor_12.JPG"))).getImage();
         } catch (Exception e) {/*How to handle?*/
         }
         
@@ -45,11 +47,20 @@ public class LockedDoor12 extends Scene {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //Graphics2D g2 = (Graphics2D) g;
-        if (image != null) {
+        if ((image != null)||(image2!= null)) {
+            if(isClosed==true){
             boolean val = g.drawImage(image, 0, 0, 400, 300, this);
+            } else if (isClosed ==false){
+                boolean val = g.drawImage(image2, 0, 0, 400, 300, this);
+            }
         } else {
             System.out.println("Image not found");
-        }        
+        }    
+        
+
     } 
-    
+        @Override
+        public void setImage(){
+        isClosed=false; 
+        }
 }
